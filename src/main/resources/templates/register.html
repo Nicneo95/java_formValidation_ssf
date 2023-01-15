@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .errors {color: red;}
+    </style>
     <title>Document</title>
   </head>
   <body>
@@ -13,11 +16,11 @@
       data-th-object="${person}"
     >
       Name: <input type="text" data-th-field="*{name}" /> 
-      <span data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>
+      <span class="errors" data-th-if="${#fields.hasErrors('name')}" data-th-errors="*{name}"></span>
       <br>
       Age:
       <input type="number" data-th-field="*{age}" />
-      <span data-th-if="${#fields.hasErrors('age')}" data-th-errors="*{age}"></span>
+      <span class="errors" data-th-if="${#fields.hasErrors('age')}" data-th-errors="*{age}"></span>
       <br>
       Hobbies:
       <input type="checkbox" value="Fly drone" data-th-field="*{hobbies}" >Fly drone</input>
@@ -28,14 +31,14 @@
         value="Shop for drone parts"
         data-th-field="*{hobbies}"
       >Shop for drone parts</input>
-      <span data-th-if="${#fields.hasErrors('hobbies')}" data-th-errors="*{hobbies}"></span>
+      <span class="errors" data-th-if="${#fields.hasErrors('hobbies')}" data-th-errors="*{hobbies}"></span>
       <br>
       Marital Status: <input type="radio" value="1" data-th-field="*{isMarried}">isMarried</input>
-      <span data-th-if="${#fields.hasErrors('isMarried')}" data-th-errors="*{isMarried}"></span>
+      <span class="errors" data-th-if="${#fields.hasErrors('isMarried')}" data-th-errors="*{isMarried}"></span>
       <br>
       Date of Birth:
       <input type="date" data-th-field="*{dateOfBirth}">
-      <span data-th-if="${#fields.hasErrors('dateOfBirth')}" data-th-errors="*{dateOfBirth}"></span>
+      <span class="errors" data-th-if="${#fields.hasErrors('dateOfBirth')}" data-th-errors="*{dateOfBirth}"></span>
       <br>
       <button type="submit">Register</button>
     </form>
